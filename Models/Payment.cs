@@ -12,8 +12,7 @@ namespace BGMOrderAutomation.Models
         CHECK,
         CREDİT
     }
-
-    public abstract class Payment
+        public abstract class Payment
     {
         public int paymentId { get; set; }
         public decimal amount { get; set; }

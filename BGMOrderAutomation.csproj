@@ -46,7 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Cash.cs" />
+    <Compile Include="Models\Check.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Credit.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="View\BasketDetailPage.cs">
       <SubType>Form</SubType>
     </Compile>
