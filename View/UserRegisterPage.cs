@@ -28,7 +28,7 @@ namespace BGMOrderAutomation.View
         private void btnRegister_Click(object sender, EventArgs e)
         {
             Models.User user = new Models.User(1, txtUsername.Text, txtPassword.Text, "Mahalle cadde", 0);
-            user.addUser();
+            user.createUser();
         }
     }
 }

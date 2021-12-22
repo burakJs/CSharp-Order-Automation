@@ -17,7 +17,7 @@ namespace BGMOrderAutomation.Models
             this.address = address;
             this.totalShopping = totalShopping;
         }
-        public void addUser()
+        public void createUser()
         {
             Constant.connect.Open();
             SqlParameter[] parameters = new SqlParameter[]
@@ -27,15 +27,35 @@ namespace BGMOrderAutomation.Models
                 new SqlParameter("@total_shopping", totalShopping),
            };
 
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = Constant.connect;
-            cmd.CommandText = "INSERT INTO Users values(@username,@password,@total_shopping)";
+            SqlCommand cmd = new SqlCommand
+            {
+                Connection = Constant.connect,
+                CommandText = "INSERT INTO Users values(@username,@password,@total_shopping)"
+            };
             foreach (SqlParameter parameter in parameters)
             {
                 cmd.Parameters.Add(parameter);
             }
             cmd.ExecuteNonQuery();
             Constant.connect.Close();
+        }
+
+        public bool loginUser()
+        {
+            
+            
+            Constant.connect.Open();
+            SqlCommand cmd = new SqlCommand
+            {
+                Connection = Constant.connect,
+                CommandText = "SELECT * FROM Users where username=@user AND password=@pass"
+            };
+            cmd.Parameters.AddWithValue("@user", username);
+            cmd.Parameters.AddWithValue("@pass", password);
+            SqlDataReader reader = cmd.ExecuteReader();
+            bool result = reader.Read();
+            Constant.connect.Close();
+            return result;
         }
 
     }

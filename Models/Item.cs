@@ -29,6 +29,7 @@ namespace BGMOrderAutomation.Models
             this.tax = tax;
         }
 
+        public Item() { }
         public float getWeight()
         {
             return this.weight;
@@ -61,6 +62,66 @@ namespace BGMOrderAutomation.Models
             }
             cmd.ExecuteNonQuery();
             Constant.connect.Close();
+        }
+
+        public List<Item> getAll()
+        {
+            List<Item> itemList = new List<Item>();
+            SqlCommand cmd = new SqlCommand 
+            {
+                Connection = Constant.connect,
+                CommandText = "SELECT * FROM Items"
+            };
+           
+            Constant.connect.Open();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Item item = new Item(
+                        Convert.ToInt32(reader["id"]),
+                        reader["item_name"].ToString(),
+                        Convert.ToInt32(reader["item_quantity"]),
+                        float.Parse(reader["item_price"].ToString()),
+                        Convert.ToInt32(reader["company_id"]),
+                        float.Parse(reader["weight"].ToString()),
+                        Convert.ToInt32(reader["tax"])
+                        );
+                    itemList.Add(item);
+                }
+
+                Constant.connect.Close();
+            }
+            return itemList;
+        }
+
+        public Item getItemByID(int id)
+        {
+            Item item = new Item();
+            SqlCommand cmd = new SqlCommand
+            {
+                Connection = Constant.connect,
+                CommandText = "SELECT * FROM Items WHERE id=@id"
+            };
+            cmd.Parameters.AddWithValue("@id", id);
+            Constant.connect.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                item = new Item(
+                    Convert.ToInt32(reader["id"]),
+                    reader["item_name"].ToString(),
+                    Convert.ToInt32(reader["item_quantity"]),
+                    float.Parse(reader["item_price"].ToString()),
+                    Convert.ToInt32(reader["company_id"]),
+                    float.Parse(reader["weight"].ToString()),
+                    Convert.ToInt32(reader["tax"])
+                    );
+            }
+
+            Constant.connect.Close();
+        
+            return item;
         }
     }
 }

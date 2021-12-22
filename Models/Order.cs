@@ -16,10 +16,10 @@ namespace BGMOrderAutomation.Models
         public DateTime date { get; set; }
         public OrderState state { get; set; }
         public String ownerOrder { get; set; }
-        public List<String> orderDetails { get; set; }
+        public List<OrderDetail> orderDetails { get; set; }
         public int payment { get; set; }
 
-        public Order(int orderId, DateTime date, OrderState state, String ownerOrder, List<String> orderDetails, int payment)
+        public Order(int orderId, DateTime date, OrderState state, String ownerOrder, List<OrderDetail> orderDetails, int payment)
         {
             this.orderId = orderId;
             this.date = date;

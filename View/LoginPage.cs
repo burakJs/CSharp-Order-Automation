@@ -47,12 +47,22 @@ namespace BGMOrderAutomation
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Models.User user = new Models.User(1, txtUsername.Text, txtPassword.Text, "__", 0);
             if (radioUser.Checked)
             {
-                this.Hide();
-                View.UserHomePage userHomePage = new View.UserHomePage();
-                userHomePage.ShowDialog();
-                this.Close();
+                if (user.loginUser())
+                {
+                    MessageBox.Show("Login success", user.username);
+                    this.Hide();
+                    View.UserHomePage userHomePage = new View.UserHomePage(user);
+                    userHomePage.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Login failed");
+                }
+                
             }
             if (radioCustomer.Checked)
             {
