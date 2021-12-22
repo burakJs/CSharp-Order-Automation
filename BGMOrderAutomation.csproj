@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3CA8C00F-4693-45C2-AAD5-A72BAE8C8B7E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BGMOrderAutomation</RootNamespace>
+    <AssemblyName>BGMOrderAutomation</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="View\BasketDetailPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BasketDetailPage.Designer.cs">
+      <DependentUpon>BasketDetailPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CheckPaymentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CheckPaymentPage.Designer.cs">
+      <DependentUpon>CheckPaymentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CompanyItemEditPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CompanyItemEditPage.Designer.cs">
+      <DependentUpon>CompanyItemEditPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreditPaymentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CreditPaymentPage.Designer.cs">
+      <DependentUpon>CreditPaymentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CustomerHomePage.Designer.cs">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerItemsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CustomerItemsPage.Designer.cs">
+      <DependentUpon>CustomerItemsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerRegisterPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CustomerRegisterPage.Designer.cs">
+      <DependentUpon>CustomerRegisterPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomersUsersDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CustomersUsersDetails.Designer.cs">
+      <DependentUpon>CustomersUsersDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\UserHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserHomePage.Designer.cs">
+      <DependentUpon>UserHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserRegisterPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserRegisterPage.Designer.cs">
+      <DependentUpon>UserRegisterPage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\BasketDetailPage.resx">
+      <DependentUpon>BasketDetailPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CheckPaymentPage.resx">
+      <DependentUpon>CheckPaymentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CompanyItemEditPage.resx">
+      <DependentUpon>CompanyItemEditPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CreditPaymentPage.resx">
+      <DependentUpon>CreditPaymentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomerHomePage.resx">
+      <DependentUpon>CustomerHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomerItemsPage.resx">
+      <DependentUpon>CustomerItemsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomerRegisterPage.resx">
+      <DependentUpon>CustomerRegisterPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomersUsersDetails.resx">
+      <DependentUpon>CustomersUsersDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\UserHomePage.resx">
+      <DependentUpon>UserHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserRegisterPage.resx">
+      <DependentUpon>UserRegisterPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basket icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
