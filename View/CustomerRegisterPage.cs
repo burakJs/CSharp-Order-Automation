@@ -27,6 +27,9 @@ namespace BGMOrderAutomation.View
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            Models.Customer customer = new Models.Customer(1, txtUsername.Text, txtPassword.Text, txtAddress.Text);
+            customer.addCustomer();
+
             this.Hide();
             View.CustomerHomePage customerHomePage = new View.CustomerHomePage();
             customerHomePage.ShowDialog();

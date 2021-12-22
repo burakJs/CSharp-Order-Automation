@@ -9,6 +9,6 @@ namespace BGMOrderAutomation.Models
 {
     class Constant
     {
-        public static SqlConnection connect = new SqlConnection("Data Source=DESKTOP-DEO51K2\\SQLEXPRESS;Initial Catalog=OrderAutomation;Integrated Security=True");
+        public static SqlConnection connect = new SqlConnection("Data Source=DESKTOP-71BP9LD\\SQLEXPRESS;Initial Catalog=OrderAutomation;Integrated Security=True");
     }
 }
