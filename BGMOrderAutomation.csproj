@@ -49,6 +49,7 @@
     <Compile Include="Models\Cash.cs" />
     <Compile Include="Models\Check.cs" />
     <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Constant.cs" />
     <Compile Include="Models\Credit.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Item.cs" />
