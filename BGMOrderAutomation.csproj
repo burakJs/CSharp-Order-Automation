@@ -57,6 +57,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\SQLManager.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="View\BasketDetailPage.cs">
       <SubType>Form</SubType>

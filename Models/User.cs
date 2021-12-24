@@ -10,34 +10,27 @@ namespace BGMOrderAutomation.Models
     public class User:Member
     {
         public String address { get; set; }
-        public int totalShopping { get; set; }
+        public float totalShopping { get; set; }
 
-        public User(int Id, String username, String password,String address, int totalShopping) : base(Id,username,password)
+        public User(int Id, String username, String password,String address, float totalShopping) : base(Id,username,password)
         {
             this.address = address;
             this.totalShopping = totalShopping;
         }
+        public User()
+        {
+
+        }
         public void createUser()
         {
-            Constant.connect.Open();
             SqlParameter[] parameters = new SqlParameter[]
            {
                 new SqlParameter("@username", username),
                 new SqlParameter("@password", password),
                 new SqlParameter("@total_shopping", totalShopping),
            };
-
-            SqlCommand cmd = new SqlCommand
-            {
-                Connection = Constant.connect,
-                CommandText = "INSERT INTO Users values(@username,@password,@total_shopping)"
-            };
-            foreach (SqlParameter parameter in parameters)
-            {
-                cmd.Parameters.Add(parameter);
-            }
-            cmd.ExecuteNonQuery();
-            Constant.connect.Close();
+            string commandText = "INSERT INTO Users values(@username,@password,@total_shopping)";
+            SQLManager.add(parameters, commandText);
         }
 
         public bool loginUser()
@@ -55,8 +48,47 @@ namespace BGMOrderAutomation.Models
             SqlDataReader reader = cmd.ExecuteReader();
             bool result = reader.Read();
             Constant.connect.Close();
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@username",username),
+                new SqlParameter("@total_shopping",totalShopping),
+                new SqlParameter("@id",1),
+                new SqlParameter("@userId",this.memberId)
+            };
+            string commandText = @"IF EXISTS(SELECT * FROM LoginUser WHERE id = 1)
+                            UPDATE LoginUser 
+                            SET username = @username,total_shopping=@total_shopping, user_id=@userId
+                            WHERE id = 1
+                        ELSE
+                            INSERT INTO LoginUser(username, total_shopping, user_id) VALUES(@username, @total_shopping, @userId);";
+            SQLManager.add(parameters, commandText);
             return result;
         }
 
+        static public User getLoginedUser()
+        {
+            User user;
+            Constant.connect.Open();
+            SqlCommand cmd = new SqlCommand
+            {
+                Connection = Constant.connect,
+                CommandText = "SELECT * FROM LoginUser where id=1"
+            };
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                user = new User((int)reader["id"], reader["username"].ToString(), "", "", float.Parse(reader["total_shopping"].ToString()));
+                Constant.connect.Close();
+                return user;
+            }
+            else
+            {
+                Constant.connect.Close();
+                return new User();
+            }
+            
+            
+        }
     }
 }

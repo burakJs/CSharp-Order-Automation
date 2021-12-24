@@ -14,22 +14,23 @@ namespace BGMOrderAutomation.View
     {
         private Models.User user;
         private Models.Item item;
-        private List<Models.OrderDetail> orderDetails = new List<Models.OrderDetail>();
-        public UserHomePage(Models.User user)
+        public UserHomePage()
         {
             InitializeComponent();
-            this.user = user;
         }
         private void btnBasket_Click(object sender, EventArgs e)
         {
+            Models.Order order = Models.Order.getUserOrder(user.memberId);
+            order.addOrder(order.orderId);
             this.Hide();
-            View.BasketDetailPage basketDetailPage = new View.BasketDetailPage(orderDetails);
+            View.BasketDetailPage basketDetailPage = new View.BasketDetailPage();
             basketDetailPage.ShowDialog();
             this.Close();
         }
 
         private void UserHomePage_Load(object sender, EventArgs e)
         {
+            user = Models.User.getLoginedUser();
             lblUsername.Text = user.username;
             Models.Item item = new Models.Item();
             foreach(Models.Item i in item.getAll()){
@@ -66,8 +67,9 @@ namespace BGMOrderAutomation.View
         {
             Models.Item item = new Models.Item();
             item = item.getItemByID(Convert.ToInt32(txtItemID.Text));
-            Models.OrderDetail orderDetail = new Models.OrderDetail(1, Convert.ToInt32(comboItemQuantity.SelectedItem), item, item.tax);
-            orderDetails.Add(orderDetail);
+            Models.Order order = Models.Order.getUserOrder(user.memberId);
+            Models.OrderDetail orderDetail = new Models.OrderDetail(1, Convert.ToInt32(comboItemQuantity.SelectedItem), item, item.tax,order.orderId);
+            orderDetail.createOrderDetail(1);
             txtItemID.Text = "";
             comboItemQuantity.Text = "";
             lblTotalPrice.Text = "0 $";

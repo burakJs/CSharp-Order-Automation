@@ -30,7 +30,6 @@ namespace BGMOrderAutomation.View
         private void InitializeComponent()
         {
             this.lblDate = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.orderDetailList = new System.Windows.Forms.ListView();
             this.idColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.itemNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,31 +46,20 @@ namespace BGMOrderAutomation.View
             this.lblTotalTax = new System.Windows.Forms.Label();
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(24, 17);
+            this.lblDate.Location = new System.Drawing.Point(1028, 9);
             this.lblDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(174, 76);
+            this.lblDate.Size = new System.Drawing.Size(84, 37);
             this.lblDate.TabIndex = 38;
             this.lblDate.Text = "Date";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.lblStatus.ForeColor = System.Drawing.Color.White;
-            this.lblStatus.Location = new System.Drawing.Point(896, 17);
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(70, 76);
-            this.lblStatus.TabIndex = 39;
-            this.lblStatus.Text = "_";
             // 
             // orderDetailList
             // 
@@ -85,10 +73,10 @@ namespace BGMOrderAutomation.View
             this.orderDetailList.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.orderDetailList.ForeColor = System.Drawing.Color.White;
             this.orderDetailList.HideSelection = false;
-            this.orderDetailList.Location = new System.Drawing.Point(38, 94);
-            this.orderDetailList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.orderDetailList.Location = new System.Drawing.Point(38, 117);
+            this.orderDetailList.Margin = new System.Windows.Forms.Padding(6);
             this.orderDetailList.Name = "orderDetailList";
-            this.orderDetailList.Size = new System.Drawing.Size(1074, 469);
+            this.orderDetailList.Size = new System.Drawing.Size(1074, 446);
             this.orderDetailList.TabIndex = 50;
             this.orderDetailList.UseCompatibleStateImageBehavior = false;
             this.orderDetailList.View = System.Windows.Forms.View.Details;
@@ -160,7 +148,7 @@ namespace BGMOrderAutomation.View
             this.radioCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.radioCash.ForeColor = System.Drawing.Color.White;
             this.radioCash.Location = new System.Drawing.Point(452, 848);
-            this.radioCash.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.radioCash.Margin = new System.Windows.Forms.Padding(6);
             this.radioCash.Name = "radioCash";
             this.radioCash.Size = new System.Drawing.Size(168, 59);
             this.radioCash.TabIndex = 55;
@@ -175,7 +163,7 @@ namespace BGMOrderAutomation.View
             this.radioCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.radioCredit.ForeColor = System.Drawing.Color.White;
             this.radioCredit.Location = new System.Drawing.Point(238, 848);
-            this.radioCredit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.radioCredit.Margin = new System.Windows.Forms.Padding(6);
             this.radioCredit.Name = "radioCredit";
             this.radioCredit.Size = new System.Drawing.Size(183, 59);
             this.radioCredit.TabIndex = 54;
@@ -189,7 +177,7 @@ namespace BGMOrderAutomation.View
             this.radioCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.radioCheck.ForeColor = System.Drawing.Color.White;
             this.radioCheck.Location = new System.Drawing.Point(662, 848);
-            this.radioCheck.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.radioCheck.Margin = new System.Windows.Forms.Padding(6);
             this.radioCheck.Name = "radioCheck";
             this.radioCheck.Size = new System.Drawing.Size(192, 59);
             this.radioCheck.TabIndex = 56;
@@ -203,7 +191,7 @@ namespace BGMOrderAutomation.View
             this.btnAddBasket.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBasket.ForeColor = System.Drawing.Color.White;
             this.btnAddBasket.Location = new System.Drawing.Point(804, 917);
-            this.btnAddBasket.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAddBasket.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddBasket.Name = "btnAddBasket";
             this.btnAddBasket.Size = new System.Drawing.Size(326, 98);
             this.btnAddBasket.TabIndex = 57;
@@ -216,7 +204,7 @@ namespace BGMOrderAutomation.View
             this.lblTotalTax.AutoSize = true;
             this.lblTotalTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblTotalTax.ForeColor = System.Drawing.Color.White;
-            this.lblTotalTax.Location = new System.Drawing.Point(831, 588);
+            this.lblTotalTax.Location = new System.Drawing.Point(831, 597);
             this.lblTotalTax.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotalTax.Name = "lblTotalTax";
             this.lblTotalTax.Size = new System.Drawing.Size(281, 63);
@@ -229,7 +217,7 @@ namespace BGMOrderAutomation.View
             this.lblSubTotal.AutoSize = true;
             this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblSubTotal.ForeColor = System.Drawing.Color.White;
-            this.lblSubTotal.Location = new System.Drawing.Point(831, 651);
+            this.lblSubTotal.Location = new System.Drawing.Point(831, 660);
             this.lblSubTotal.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblSubTotal.Name = "lblSubTotal";
             this.lblSubTotal.Size = new System.Drawing.Size(281, 63);
@@ -242,7 +230,7 @@ namespace BGMOrderAutomation.View
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.lblTotalPrice.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPrice.Location = new System.Drawing.Point(724, 742);
+            this.lblTotalPrice.Location = new System.Drawing.Point(742, 742);
             this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(388, 76);
@@ -250,12 +238,30 @@ namespace BGMOrderAutomation.View
             this.lblTotalPrice.Text = "Total Price :";
             this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
+            this.btnBack.BackgroundImage = global::BGMOrderAutomation.Properties.Resources.back_arrow;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(25, 15);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(6);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(102, 90);
+            this.btnBack.TabIndex = 72;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // BasketDetailPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(1154, 1038);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.lblSubTotal);
             this.Controls.Add(this.lblTotalTax);
@@ -267,9 +273,8 @@ namespace BGMOrderAutomation.View
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.orderDetailList);
-            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblDate);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "BasketDetailPage";
             this.Text = "Basket Detail Page";
             this.Load += new System.EventHandler(this.BasketDetailPage_Load);
@@ -281,7 +286,6 @@ namespace BGMOrderAutomation.View
         #endregion
 
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ListView orderDetailList;
         private System.Windows.Forms.ColumnHeader idColumn;
         private System.Windows.Forms.ColumnHeader itemNameColumn;
@@ -298,5 +302,6 @@ namespace BGMOrderAutomation.View
         private System.Windows.Forms.Label lblTotalTax;
         private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -54,7 +54,7 @@ namespace BGMOrderAutomation
                 {
                     MessageBox.Show("Login success", user.username);
                     this.Hide();
-                    View.UserHomePage userHomePage = new View.UserHomePage(user);
+                    View.UserHomePage userHomePage = new View.UserHomePage();
                     userHomePage.ShowDialog();
                     this.Close();
                 }

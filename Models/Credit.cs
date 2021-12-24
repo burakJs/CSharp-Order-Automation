@@ -8,15 +8,22 @@ namespace BGMOrderAutomation.Models
 {
     public enum CreditType
     {
-        CREDİT,
+        CREDIT,
         BANK
     }
     public class Credit:Payment
     {
         public string number { get; set; }
         public CreditType type { get; set; }
-        public DateTime exDate { get; set; }
+        public DateTime expDate { get; set; }
 
+        public Credit(string number, CreditType type, DateTime expDate, int amount)
+        {
+            this.number = number;
+            this.type = type;
+            this.expDate = expDate;
+            this.amount = amount;
+        }
         public bool authorized()
         {
             return this.number.Length == 16;
