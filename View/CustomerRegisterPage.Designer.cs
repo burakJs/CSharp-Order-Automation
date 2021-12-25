@@ -29,14 +29,6 @@ namespace BGMOrderAutomation.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Apple",
-            "12",
-            "2.50"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Strawberry",
-            "30",
-            "6.75"}, -1);
             this.btnBack = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPasswordAgain = new System.Windows.Forms.TextBox();
@@ -65,6 +57,7 @@ namespace BGMOrderAutomation.View
             this.label11 = new System.Windows.Forms.Label();
             this.txtWeight = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBack
@@ -76,10 +69,10 @@ namespace BGMOrderAutomation.View
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(16, 15);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Location = new System.Drawing.Point(24, 23);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(68, 58);
+            this.btnBack.Size = new System.Drawing.Size(102, 91);
             this.btnBack.TabIndex = 35;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -87,12 +80,12 @@ namespace BGMOrderAutomation.View
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Forte", 32F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(163, 15);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(244, 23);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(441, 60);
+            this.label4.Size = new System.Drawing.Size(761, 97);
             this.label4.TabIndex = 34;
             this.label4.Text = "Customer Register";
             // 
@@ -102,22 +95,22 @@ namespace BGMOrderAutomation.View
             this.txtPasswordAgain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPasswordAgain.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtPasswordAgain.ForeColor = System.Drawing.Color.White;
-            this.txtPasswordAgain.Location = new System.Drawing.Point(43, 332);
-            this.txtPasswordAgain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPasswordAgain.Location = new System.Drawing.Point(64, 519);
+            this.txtPasswordAgain.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPasswordAgain.Name = "txtPasswordAgain";
             this.txtPasswordAgain.PasswordChar = '*';
-            this.txtPasswordAgain.Size = new System.Drawing.Size(346, 34);
+            this.txtPasswordAgain.Size = new System.Drawing.Size(518, 51);
             this.txtPasswordAgain.TabIndex = 33;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Forte", 18F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(36, 296);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(54, 462);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(225, 32);
+            this.label3.Size = new System.Drawing.Size(372, 55);
             this.label3.TabIndex = 32;
             this.label3.Text = "Password Again";
             // 
@@ -126,10 +119,10 @@ namespace BGMOrderAutomation.View
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(115, 508);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegister.Location = new System.Drawing.Point(64, 920);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(209, 47);
+            this.btnRegister.Size = new System.Drawing.Size(314, 73);
             this.btnRegister.TabIndex = 31;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -141,22 +134,22 @@ namespace BGMOrderAutomation.View
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtPassword.ForeColor = System.Drawing.Color.White;
-            this.txtPassword.Location = new System.Drawing.Point(43, 244);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Location = new System.Drawing.Point(64, 381);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(346, 34);
+            this.txtPassword.Size = new System.Drawing.Size(518, 51);
             this.txtPassword.TabIndex = 30;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Forte", 18F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(36, 207);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(54, 323);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 32);
+            this.label2.Size = new System.Drawing.Size(236, 55);
             this.label2.TabIndex = 29;
             this.label2.Text = "Password";
             // 
@@ -166,21 +159,21 @@ namespace BGMOrderAutomation.View
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtUsername.ForeColor = System.Drawing.Color.White;
-            this.txtUsername.Location = new System.Drawing.Point(43, 138);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Location = new System.Drawing.Point(64, 216);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(346, 34);
+            this.txtUsername.Size = new System.Drawing.Size(518, 51);
             this.txtUsername.TabIndex = 28;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Forte", 18F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(36, 101);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(54, 158);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 32);
+            this.label1.Size = new System.Drawing.Size(260, 55);
             this.label1.TabIndex = 27;
             this.label1.Text = "Username ";
             // 
@@ -190,21 +183,21 @@ namespace BGMOrderAutomation.View
             this.txtCompanyName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtCompanyName.ForeColor = System.Drawing.Color.White;
-            this.txtCompanyName.Location = new System.Drawing.Point(43, 432);
-            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCompanyName.Location = new System.Drawing.Point(64, 675);
+            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(346, 34);
+            this.txtCompanyName.Size = new System.Drawing.Size(518, 51);
             this.txtCompanyName.TabIndex = 37;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Forte", 18F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(36, 395);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(54, 617);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(221, 32);
+            this.label5.Size = new System.Drawing.Size(373, 55);
             this.label5.TabIndex = 36;
             this.label5.Text = "Company Name";
             // 
@@ -218,13 +211,10 @@ namespace BGMOrderAutomation.View
             this.itemList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.itemList.ForeColor = System.Drawing.Color.White;
             this.itemList.HideSelection = false;
-            this.itemList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
-            this.itemList.Location = new System.Drawing.Point(419, 138);
-            this.itemList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.itemList.Location = new System.Drawing.Point(628, 216);
+            this.itemList.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.itemList.Name = "itemList";
-            this.itemList.Size = new System.Drawing.Size(639, 232);
+            this.itemList.Size = new System.Drawing.Size(568, 360);
             this.itemList.TabIndex = 38;
             this.itemList.UseCompatibleStateImageBehavior = false;
             this.itemList.View = System.Windows.Forms.View.Details;
@@ -252,45 +242,45 @@ namespace BGMOrderAutomation.View
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtName.ForeColor = System.Drawing.Color.White;
-            this.txtName.Location = new System.Drawing.Point(419, 413);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Location = new System.Drawing.Point(628, 645);
+            this.txtName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(178, 34);
+            this.txtName.Size = new System.Drawing.Size(266, 51);
             this.txtName.TabIndex = 40;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Forte", 18F);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(412, 376);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(618, 588);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 32);
+            this.label6.Size = new System.Drawing.Size(153, 55);
             this.label6.TabIndex = 39;
             this.label6.Text = "Name";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Forte", 18F);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(620, 376);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(930, 588);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(126, 32);
+            this.label7.Size = new System.Drawing.Size(202, 55);
             this.label7.TabIndex = 41;
             this.label7.Text = "Quantity";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Forte", 18F);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(413, 548);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(620, 856);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 32);
+            this.label8.Size = new System.Drawing.Size(133, 55);
             this.label8.TabIndex = 43;
             this.label8.Text = "Price";
             // 
@@ -299,10 +289,10 @@ namespace BGMOrderAutomation.View
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(620, 575);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Location = new System.Drawing.Point(930, 898);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(161, 47);
+            this.btnAdd.Size = new System.Drawing.Size(266, 73);
             this.btnAdd.TabIndex = 45;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -313,11 +303,11 @@ namespace BGMOrderAutomation.View
             this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
             this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
             this.maskedTextBox1.ForeColor = System.Drawing.Color.White;
-            this.maskedTextBox1.Location = new System.Drawing.Point(623, 412);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maskedTextBox1.Location = new System.Drawing.Point(934, 644);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.maskedTextBox1.Mask = "00000";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(160, 34);
+            this.maskedTextBox1.Size = new System.Drawing.Size(238, 51);
             this.maskedTextBox1.TabIndex = 46;
             this.maskedTextBox1.ValidatingType = typeof(int);
             // 
@@ -326,34 +316,33 @@ namespace BGMOrderAutomation.View
             this.maskedTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
             this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
             this.maskedTextBox2.ForeColor = System.Drawing.Color.White;
-            this.maskedTextBox2.Location = new System.Drawing.Point(420, 589);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.maskedTextBox2.Mask = "000,00";
+            this.maskedTextBox2.Location = new System.Drawing.Point(630, 920);
+            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(177, 34);
+            this.maskedTextBox2.Size = new System.Drawing.Size(264, 51);
             this.maskedTextBox2.TabIndex = 47;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Forte", 18F);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(452, 101);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(678, 158);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(266, 32);
+            this.label9.Size = new System.Drawing.Size(437, 55);
             this.label9.TabIndex = 48;
             this.label9.Text = "Items Of Company ";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Forte", 18F);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(620, 465);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(930, 727);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 32);
+            this.label10.Size = new System.Drawing.Size(173, 55);
             this.label10.TabIndex = 51;
             this.label10.Text = "Weight";
             // 
@@ -363,21 +352,21 @@ namespace BGMOrderAutomation.View
             this.txtTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtTax.ForeColor = System.Drawing.Color.White;
-            this.txtTax.Location = new System.Drawing.Point(419, 501);
-            this.txtTax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTax.Location = new System.Drawing.Point(628, 783);
+            this.txtTax.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtTax.Name = "txtTax";
-            this.txtTax.Size = new System.Drawing.Size(178, 34);
+            this.txtTax.Size = new System.Drawing.Size(266, 51);
             this.txtTax.TabIndex = 50;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Forte", 18F);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(412, 465);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(618, 727);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 32);
+            this.label11.Size = new System.Drawing.Size(104, 55);
             this.label11.TabIndex = 49;
             this.label11.Text = "Tax";
             // 
@@ -387,10 +376,10 @@ namespace BGMOrderAutomation.View
             this.txtWeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtWeight.ForeColor = System.Drawing.Color.White;
-            this.txtWeight.Location = new System.Drawing.Point(620, 502);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWeight.Location = new System.Drawing.Point(930, 784);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(178, 34);
+            this.txtWeight.Size = new System.Drawing.Size(266, 51);
             this.txtWeight.TabIndex = 52;
             // 
             // txtAddress
@@ -399,18 +388,31 @@ namespace BGMOrderAutomation.View
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtAddress.ForeColor = System.Drawing.Color.White;
-            this.txtAddress.Location = new System.Drawing.Point(27, 588);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAddress.Location = new System.Drawing.Point(64, 826);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(346, 34);
+            this.txtAddress.Size = new System.Drawing.Size(518, 51);
             this.txtAddress.TabIndex = 53;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(54, 765);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(201, 55);
+            this.label12.TabIndex = 54;
+            this.label12.Text = "Address";
             // 
             // CustomerRegisterPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
-            this.ClientSize = new System.Drawing.Size(1116, 660);
+            this.ClientSize = new System.Drawing.Size(1248, 1031);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.label10);
@@ -436,7 +438,7 @@ namespace BGMOrderAutomation.View
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "CustomerRegisterPage";
             this.Text = "CustomerRegisterPage";
             this.ResumeLayout(false);
@@ -474,5 +476,6 @@ namespace BGMOrderAutomation.View
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtWeight;
         private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Label label12;
     }
 }

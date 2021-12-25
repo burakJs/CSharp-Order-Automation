@@ -9,7 +9,7 @@ namespace BGMOrderAutomation.Models
 {
     public class SQLManager
     {
-        static public void add(SqlParameter[] parameters, String commandText)
+        static public void runQuery(SqlParameter[] parameters, String commandText)
         {
             Constant.connect.Open();
 

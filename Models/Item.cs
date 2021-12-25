@@ -123,5 +123,56 @@ namespace BGMOrderAutomation.Models
         
             return item;
         }
+
+        static public List<Item> getAllItemsByCompanyId(int companyId)
+        {
+            List<Item> itemList = new List<Item>();
+            SqlCommand cmd = new SqlCommand
+            {
+                Connection = Constant.connect,
+                CommandText = "SELECT * FROM Items WHERE company_id = " + companyId.ToString()
+            };
+
+            Constant.connect.Open();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Item item = new Item(
+                        Convert.ToInt32(reader["id"]),
+                        reader["item_name"].ToString(),
+                        Convert.ToInt32(reader["item_quantity"]),
+                        float.Parse(reader["item_price"].ToString()),
+                        Convert.ToInt32(reader["company_id"]),
+                        float.Parse(reader["weight"].ToString()),
+                        Convert.ToInt32(reader["tax"])
+                        );
+                    itemList.Add(item);
+                }
+
+                Constant.connect.Close();
+            }
+            return itemList;
+        }
+    
+        public void updateItem()
+        {
+            string commandText = "UPDATE Item SET " +
+                "item_name = @item_name AND " +
+                "item_quantity = @item_quantity AND " +
+                "item_price = @item_price AND " +
+                "tax = @tax AND " +
+                "weight = @weight WHERE id = @id";
+
+            SqlParameter[] parameters = new SqlParameter[] {
+                new SqlParameter("@item_name",name),
+                new SqlParameter("@item_quantity",quantity),
+                new SqlParameter("@item_price",price),
+                new SqlParameter("@tax",tax),
+                new SqlParameter("@weight",weight)
+            };
+
+            SQLManager.runQuery(parameters, commandText);
+        }
     }
 }

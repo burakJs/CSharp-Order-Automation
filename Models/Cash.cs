@@ -8,15 +8,16 @@ namespace BGMOrderAutomation.Models
 {
     public class Cash : Payment
     {
-        public Cash(int amount) 
+        public Cash(float amount) 
         {
             this.amount = amount;
         }
         public override int paymentMethod()
         {
             return Convert.ToInt32(PaymentMethod.CASH);
-
         }
+
+
     }
 }
 

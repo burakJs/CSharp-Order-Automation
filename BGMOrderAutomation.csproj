@@ -101,12 +101,6 @@
     <Compile Include="View\CustomerRegisterPage.Designer.cs">
       <DependentUpon>CustomerRegisterPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CustomersUsersDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\CustomersUsersDetails.Designer.cs">
-      <DependentUpon>CustomersUsersDetails.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,9 +141,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomerRegisterPage.resx">
       <DependentUpon>CustomerRegisterPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\CustomersUsersDetails.resx">
-      <DependentUpon>CustomersUsersDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>

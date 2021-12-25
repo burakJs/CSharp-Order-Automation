@@ -17,22 +17,28 @@ namespace BGMOrderAutomation.View
             InitializeComponent();
         }
 
-        private void userList_Click(object sender, EventArgs e)
-        {
-            var firstSelectedItem = userList.SelectedItems[0];
-            //MessageBox.Show(firstSelectedItem.SubItems[1].Text);
-            this.Hide();
-            View.CustomersUsersDetails customersUsersDetails = new View.CustomersUsersDetails(name: firstSelectedItem.SubItems[1].Text);
-            customersUsersDetails.ShowDialog();
-            this.Close();
-        }
-
         private void btnViewAllItems_Click(object sender, EventArgs e)
         {
             this.Hide();
             CustomerItemsPage customerItemsPage = new CustomerItemsPage();
             customerItemsPage.ShowDialog();
             this.Close();
+        }
+
+        private void CustomerHomePage_Load(object sender, EventArgs e)
+        {
+            Models.Customer customer = Models.Customer.getLoginedCustomer();
+            Models.Company company = Models.Company.getCompanyById(customer.companyId);
+            lblCompanyName.Text = company.companyName;
+            lblCustomerName.Text = customer.username;
+            List<Models.User> users = Models.User.getAllUsers();
+
+            foreach (Models.User user in users)
+            {
+                string[] columns = { user.memberId.ToString(), user.username, user.totalShopping.ToString() };
+                var listItem = new ListViewItem(columns);
+                userList.Items.Add(listItem);
+            }
         }
     }
 }

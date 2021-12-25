@@ -66,10 +66,18 @@ namespace BGMOrderAutomation
             }
             if (radioCustomer.Checked)
             {
-                this.Hide();
-                View.CustomerHomePage customerHomePage = new View.CustomerHomePage();
-                customerHomePage.ShowDialog();
-                this.Close();
+                Models.Customer customer = new Models.Customer(1, txtUsername.Text, txtPassword.Text, "");
+                if (customer.loginCustomer())
+                {
+                    this.Hide();
+                    View.CustomerHomePage customerHomePage = new View.CustomerHomePage();
+                    customerHomePage.ShowDialog();
+                    this.Close();
+                } else
+                {
+                    MessageBox.Show("Login failed");
+                }
+               
             }
         }
     }

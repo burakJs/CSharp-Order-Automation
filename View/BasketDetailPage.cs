@@ -24,10 +24,14 @@ namespace BGMOrderAutomation.View
 
         private void btnAddBasket_Click(object sender, EventArgs e)
         {
+
+            Models.Cash cash = new Models.Cash(order.calcTotal());
+            Models.User user = Models.User.getLoginedUser();
+
             if(radioCredit.Checked)
             {
                 this.Hide();
-                View.CreditPaymentPage creditPaymentPage = new View.CreditPaymentPage();
+                View.CreditPaymentPage creditPaymentPage = new View.CreditPaymentPage(order);
                 creditPaymentPage.ShowDialog();
                 this.Close();
             }
@@ -40,39 +44,20 @@ namespace BGMOrderAutomation.View
             }
             if (radioCash.Checked)
             {
-                MessageBox.Show("Purchased Successfully with Cash Payment", "Purchase Process", MessageBoxButtons.OK);
+                cash.orderComplete(order);
+                user.updateUserTotalShopping(order.calcTotal());
+                this.Hide();
+                View.UserHomePage userHomePage = new View.UserHomePage();
+                userHomePage.ShowDialog();
+                this.Close();
             }
         }
         private void getOrder()
         {
-            Models.User user = new Models.User();
             loginedUser = Models.User.getLoginedUser();
-            Models.Constant.connect.Open();
-            SqlCommand cmd = new SqlCommand
-            {
-                Connection = Models.Constant.connect,
-                CommandText = "SELECT * FROM Orders where order_state=@state AND order_owner_id=@ownerId"
-            };
-            cmd.Parameters.AddWithValue("@state", (int)Models.OrderState.WAITING);
-            cmd.Parameters.AddWithValue("@ownerId", loginedUser.memberId);
-            SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                order = new Models.Order(
-                    (int)reader["order_id"],
-                    (DateTime)reader["order_date"],
-                    (Models.OrderState)reader["order_state"],
-                    (int)reader["order_owner_id"],
-                    new List<Models.OrderDetail>(),
-                    new Models.Cash(0)
-                );
-            }
-            else
-            {
-                Console.WriteLine("BOŞ DATA");
-            }
+
+            order = Models.Order.getUserOrder(loginedUser.memberId);
             
-            Models.Constant.connect.Close();
         }
         private void BasketDetailPage_Load(object sender, EventArgs e)
         {
@@ -80,10 +65,6 @@ namespace BGMOrderAutomation.View
             float subTotal = 0;
             float totalTax = 0;
             orderDetails = new Models.OrderDetail().getOrderDetails(order.orderId);
-            if (orderDetails.Count == 0)
-            {
-                MessageBox.Show("BOŞ");
-            }
             foreach (Models.OrderDetail od in orderDetails)
             {
                 string[] columns = { od.item.id.ToString(), od.item.name, "%" + od.item.tax.ToString(), od.quantity.ToString(), od.item.getPriceForQuantity(od.quantity).ToString() };
@@ -99,7 +80,7 @@ namespace BGMOrderAutomation.View
 
             lblSubTotal.Text = subTotal.ToString("n2").Trim() + " $";
             lblTotalTax.Text = totalTax.ToString("n2").Trim() + " $";
-            lblTotalPrice.Text = (subTotal + totalTax).ToString("n2").Trim() + " $";
+            lblTotalPrice.Text = (subTotal + totalTax).ToString().Trim() + " $";
             lblDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
@@ -107,6 +88,20 @@ namespace BGMOrderAutomation.View
         {
             this.Hide();
             View.UserHomePage userHomePage = new UserHomePage();
+            userHomePage.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Models.OrderDetail od in orderDetails)
+            {
+                od.deleteOrderDetail();
+            }
+
+            order.deleteOrder();
+            this.Hide();
+            View.UserHomePage userHomePage = new View.UserHomePage();
             userHomePage.ShowDialog();
             this.Close();
         }

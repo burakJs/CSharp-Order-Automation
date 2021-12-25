@@ -67,7 +67,7 @@ namespace BGMOrderAutomation.Models
                     new SqlParameter("@order_id",orderId),
                 };
                 string commandText = "INSERT INTO OrderDetails(order_detail_quantity,order_detail_item_id,order_detail_tax,order_id) VALUES(@order_detail_quantity, @order_detail_item_id, @order_detail_tax,@order_id)";
-                SQLManager.add(parameters, commandText);
+                SQLManager.runQuery(parameters, commandText);
 
             }
             else
@@ -77,7 +77,7 @@ namespace BGMOrderAutomation.Models
 
                 };
                 string commandText = "UPDATE OrderDetails SET order_detail_quantity=@order_detail_quantity WHERE order_detail_item_id=" + item.id;
-                SQLManager.add(parameters, commandText);
+                SQLManager.runQuery(parameters, commandText);
             }
             
             
@@ -117,6 +117,14 @@ namespace BGMOrderAutomation.Models
                 Constant.connect.Close();
             }
             return orderDetails;
+        }
+    
+        public void deleteOrderDetail()
+        {
+            string commandText = "DELETE FROM OrderDetails WHERE order_detail_id=" + orderDetailId.ToString();
+            SqlParameter[] parameters = new SqlParameter[] { };
+            SQLManager.runQuery(parameters, commandText);
+
         }
     }
 }

@@ -12,16 +12,10 @@ namespace BGMOrderAutomation.View
 {
     public partial class CompanyItemEditPage : Form
     {
-        private String id;
-        private String name;
-        private String quantity;
-        private String price;
-        public CompanyItemEditPage(String id, String name, String quantity, String price)
+        private Models.Item item;
+        public CompanyItemEditPage(Models.Item item)
         {
-            this.id = id;
-            this.name = name;
-            this.quantity = quantity;
-            this.price = price;
+            this.item = item;
             InitializeComponent();
         }
 
@@ -35,17 +29,40 @@ namespace BGMOrderAutomation.View
 
         private void CompanyItemEditPage_Load(object sender, EventArgs e)
         {
-            txtItemID.Text = this.id;
-            txtItemName.Text = this.name;
-            txtItemQuantity.Text = this.quantity;
+            txtItemID.Text = this.item.id.ToString();
+            txtItemName.Text = this.item.name;
+            txtItemQuantity.Text = this.item.quantity.ToString();
             String defaultMask = "00";
-            for(int i = 0; i<this.price.Length - 5; i++)
+            for(int i = 0; i<this.item.price.ToString().Length - 5; i++)
             {
                 defaultMask += "0";
             }
             defaultMask += ",00";
             txtItemPrice.Mask = defaultMask;
-            txtItemPrice.Text = this.price;
+            txtItemPrice.Text = this.item.price.ToString();
+            txtTax.Text = this.item.tax.ToString();
+            txtWeight.Text = this.item.weight.ToString();
+            
+        }
+
+        private void btnViewAllItems_Click(object sender, EventArgs e)
+        {
+            Models.Item item = new Models.Item(
+                    this.item.id,
+                    txtItemName.Text,
+                    Convert.ToInt32(txtItemQuantity.Text),
+                    float.Parse(txtItemPrice.Text),
+                    this.item.companyId,
+                    float.Parse(txtWeight.Text),
+                    Convert.ToInt32(txtTax.Text)
+                );
+
+            item.updateItem();
+            this.Hide();
+            View.CustomerHomePage customerHomePage = new View.CustomerHomePage();
+            customerHomePage.ShowDialog();
+            this.Close();
+
         }
     }
 }

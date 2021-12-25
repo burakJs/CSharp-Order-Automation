@@ -17,7 +17,7 @@ namespace BGMOrderAutomation.Models
         public CreditType type { get; set; }
         public DateTime expDate { get; set; }
 
-        public Credit(string number, CreditType type, DateTime expDate, int amount)
+        public Credit(string number, CreditType type, DateTime expDate, float amount)
         {
             this.number = number;
             this.type = type;
@@ -26,7 +26,7 @@ namespace BGMOrderAutomation.Models
         }
         public bool authorized()
         {
-            return this.number.Length == 16;
+            return this.number.Length == 20;
         }
         public override int paymentMethod()
         {

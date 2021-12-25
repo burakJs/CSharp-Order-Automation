@@ -75,7 +75,7 @@ namespace BGMOrderAutomation.Models
                     new SqlParameter("@paymentId", payment.paymentMethod())
                 };
                 string commandText = "INSERT INTO Orders(order_date, order_state, order_owner_id,payment_id) VALUES(@order_date, @order_state, @order_owner_id, @paymentId);";
-                SQLManager.add(parameters, commandText);
+                SQLManager.runQuery(parameters, commandText);
             }
         }
         
@@ -110,6 +110,13 @@ namespace BGMOrderAutomation.Models
             }
             Constant.connect.Close();
             return order;
+        }
+    
+        public void deleteOrder()
+        {
+            string commandText = "DELETE FROM Orders WHERE order_id = " + orderId.ToString();
+            SqlParameter[] parameters = new SqlParameter[] { };
+            SQLManager.runQuery(parameters, commandText);
         }
     }
 }

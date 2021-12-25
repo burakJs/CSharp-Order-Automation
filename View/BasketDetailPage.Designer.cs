@@ -47,6 +47,7 @@ namespace BGMOrderAutomation.View
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblDate
@@ -255,12 +256,27 @@ namespace BGMOrderAutomation.View
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(25, 917);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(326, 98);
+            this.button1.TabIndex = 73;
+            this.button1.Text = "Delete Order";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BasketDetailPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(1154, 1038);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.lblSubTotal);
@@ -303,5 +319,6 @@ namespace BGMOrderAutomation.View
         private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button button1;
     }
 }

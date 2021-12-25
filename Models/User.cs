@@ -30,7 +30,7 @@ namespace BGMOrderAutomation.Models
                 new SqlParameter("@total_shopping", totalShopping),
            };
             string commandText = "INSERT INTO Users values(@username,@password,@total_shopping)";
-            SQLManager.add(parameters, commandText);
+            SQLManager.runQuery(parameters, commandText);
         }
 
         public bool loginUser()
@@ -62,7 +62,7 @@ namespace BGMOrderAutomation.Models
                             WHERE id = 1
                         ELSE
                             INSERT INTO LoginUser(username, total_shopping, user_id) VALUES(@username, @total_shopping, @userId);";
-            SQLManager.add(parameters, commandText);
+            SQLManager.runQuery(parameters, commandText);
             return result;
         }
 
@@ -89,6 +89,45 @@ namespace BGMOrderAutomation.Models
             }
             
             
+        }
+    
+        public void updateUserTotalShopping(float amount)
+        {
+            string commandText = "UPDATE Users SET total_shopping = @total_shopping WHERE id = @id";
+            SqlParameter[] parameters = new SqlParameter[] {
+                new SqlParameter("@total_shopping",totalShopping + amount),
+                new SqlParameter("@id", memberId)
+            };
+            SQLManager.runQuery(parameters, commandText);
+        }
+    
+        static public List<User> getAllUsers()
+        {
+            List<User> userList = new List<User>();
+            SqlCommand cmd = new SqlCommand
+            {
+                Connection = Constant.connect,
+                CommandText = "SELECT * FROM Users"
+            };
+
+            Constant.connect.Open();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    User user = new User(
+                        (int)reader["id"],
+                        reader["username"].ToString(),
+                        reader["password"].ToString(),
+                        "",
+                        float.Parse(reader["total_shopping"].ToString())
+                        );
+                    userList.Add(user);
+                }
+
+                Constant.connect.Close();
+            }
+            return userList;
         }
     }
 }

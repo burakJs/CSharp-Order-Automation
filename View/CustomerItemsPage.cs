@@ -12,6 +12,7 @@ namespace BGMOrderAutomation.View
 {
     public partial class CustomerItemsPage : Form
     {
+        List<Models.Item> items;
         public CustomerItemsPage()
         {
             InitializeComponent();
@@ -31,13 +32,25 @@ namespace BGMOrderAutomation.View
             //MessageBox.Show(firstSelectedItem.SubItems[1].Text);
             this.Hide();
             View.CompanyItemEditPage companyItemEditPage = new View.CompanyItemEditPage(
-                id: firstSelectedItem.SubItems[0].Text,
-                name: firstSelectedItem.SubItems[1].Text,
-                quantity: firstSelectedItem.SubItems[2].Text,
-                price: firstSelectedItem.SubItems[3].Text
+                    items[firstSelectedItem.Index]
                 ) ;
             companyItemEditPage.ShowDialog();
             this.Close();
+        }
+
+        private void CustomerItemsPage_Load(object sender, EventArgs e)
+        {
+            Models.Customer customer = Models.Customer.getLoginedCustomer();
+            items = Models.Item.getAllItemsByCompanyId(customer.companyId);
+            Models.Company company = Models.Company.getCompanyById(customer.companyId);
+            foreach (Models.Item item in items)
+            {
+                string[] columns = { item.id.ToString(), item.name, item.quantity.ToString(), item.weight.ToString(), "%"+item.tax.ToString(),item.price.ToString() };
+                var listItem = new ListViewItem(columns);
+                companyItemList.Items.Add(listItem);
+            }
+
+            lblCompanyTitle.Text = company.companyName + "'s Items";
         }
     }
 }
