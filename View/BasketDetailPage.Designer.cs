@@ -55,7 +55,7 @@ namespace BGMOrderAutomation.View
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(1028, 9);
+            this.lblDate.Location = new System.Drawing.Point(922, 9);
             this.lblDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(84, 37);

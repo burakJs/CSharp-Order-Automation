@@ -112,12 +112,12 @@ namespace BGMOrderAutomation.View
             // lblCompanyTitle
             // 
             this.lblCompanyTitle.AutoSize = true;
-            this.lblCompanyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.lblCompanyTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.lblCompanyTitle.ForeColor = System.Drawing.Color.White;
             this.lblCompanyTitle.Location = new System.Drawing.Point(168, 25);
             this.lblCompanyTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblCompanyTitle.Name = "lblCompanyTitle";
-            this.lblCompanyTitle.Size = new System.Drawing.Size(885, 91);
+            this.lblCompanyTitle.Size = new System.Drawing.Size(745, 76);
             this.lblCompanyTitle.TabIndex = 44;
             this.lblCompanyTitle.Text = "Company Name\'s Items";
             this.lblCompanyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

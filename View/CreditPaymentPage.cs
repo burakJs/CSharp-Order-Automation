@@ -49,10 +49,8 @@ namespace BGMOrderAutomation.View
 
         private void txtCardNumber_TextChanged(object sender, EventArgs e)
         {
-            string strDate = comboBox2.Text + "-" + comboBox1.Text + "-01";
-            DateTime dateTime = Convert.ToDateTime(strDate);
             Models.Order order = Models.Order.getUserOrder(Models.User.getLoginedUser().memberId);
-            Models.Credit credit = new Models.Credit(txtCardNumber.Text, (Models.CreditType)comboCardType.SelectedIndex, dateTime, order.calcTotal());
+            Models.Credit credit = new Models.Credit(txtCardNumber.Text, (Models.CreditType)comboCardType.SelectedIndex, DateTime.Now, order.calcTotal());
             lblVerified.Text = credit.authorized() ? "Verified" : "Not Verified";
         }
 
