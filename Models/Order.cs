@@ -33,17 +33,32 @@ namespace BGMOrderAutomation.Models
 
         public float calcTax()
         {
-            return 0;
+            float total = 0f;
+            foreach (OrderDetail orderDetail in orderDetails)
+            {
+                total += orderDetail.calcTax();
+            }
+            return total;
         }
 
         public float calcTotal()
         {
-            return 0;
+            float total = 0f;
+            foreach (OrderDetail orderDetail in orderDetails)
+            {
+                total += orderDetail.calcSubTotal();
+            }
+            return total;
         }
 
         public float calcTotalWeight()
         {
-            return 0;
+            float total = 0f;
+            foreach (OrderDetail orderDetail in orderDetails)
+            {
+                total += orderDetail.calcWeight();
+            }
+            return total;
         }
 
         public void changeOrderState(OrderState state)

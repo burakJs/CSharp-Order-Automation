@@ -43,25 +43,34 @@ namespace BGMOrderAutomation.Models
             SqlCommand cmd = new SqlCommand
             {
                 Connection = Constant.connect,
-                CommandText = "SELECT * FROM Customers where username=@user AND password=@pass"
+                CommandText = "SELECT * FROM Customers WHERE username=@user AND password=@pass"
             };
             cmd.Parameters.AddWithValue("@user", username);
             cmd.Parameters.AddWithValue("@pass", password);
             SqlDataReader reader = cmd.ExecuteReader();
-            bool result = reader.Read();
+            bool result;
+            
+            if (reader.Read())
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
             Constant.connect.Close();
-
             if (result)
             {
                 Constant.connect.Open();
                 cmd = new SqlCommand
                 {
                     Connection = Constant.connect,
-                    CommandText = "SELECT * FROM LoginCustomer"
+                    CommandText = "SELECT TOP 1 * FROM LoginCustomer"
                 };
-                cmd.Parameters.AddWithValue("@username", username);
                 reader = cmd.ExecuteReader();
+                
                 bool state = reader.Read();
+                string id = state ? reader["id"].ToString() : "1111"; 
                 Constant.connect.Close();
                 if (!state)
                 {
@@ -74,6 +83,18 @@ namespace BGMOrderAutomation.Models
                 };
                     SQLManager.runQuery(parameters, commandText);
                 }
+                else
+                {
+                    string commandText = "UPDATE LoginCustomer SET username = @username , company_id = @company_id , address = @address , customer_id = @customer_id WHERE id =" + id;
+                    SqlParameter[] parameters = new SqlParameter[] {
+                    new SqlParameter("@username",username),
+                    new SqlParameter("@company_id",companyId),
+                    new SqlParameter("@address",this.address),
+                    new SqlParameter("@customer_id",memberId)
+                };
+                    SQLManager.runQuery(parameters, commandText);
+                }
+
                 
             }
             return result;
@@ -86,12 +107,13 @@ namespace BGMOrderAutomation.Models
             SqlCommand cmd = new SqlCommand
             {
                 Connection = Constant.connect,
-                CommandText = "SELECT * FROM LoginCustomer where id=3" 
+                CommandText = "SELECT * FROM LoginCustomer" 
             };
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
                 customer = new Customer((int)reader["customer_id"], reader["username"].ToString(), "", reader["address"].ToString());
+                customer.companyId = (int)reader["company_id"];
                 Constant.connect.Close();
                 return customer;
             }

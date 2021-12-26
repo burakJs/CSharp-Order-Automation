@@ -36,13 +36,13 @@ namespace BGMOrderAutomation.View
             this.txtItemQuantity = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtItemPrice = new System.Windows.Forms.MaskedTextBox();
             this.btnViewAllItems = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.txtTax = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtWeight = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtItemPrice = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtItemID
@@ -52,7 +52,7 @@ namespace BGMOrderAutomation.View
             this.txtItemID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtItemID.ForeColor = System.Drawing.Color.White;
             this.txtItemID.Location = new System.Drawing.Point(324, 156);
-            this.txtItemID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtItemID.Margin = new System.Windows.Forms.Padding(6);
             this.txtItemID.Name = "txtItemID";
             this.txtItemID.ReadOnly = true;
             this.txtItemID.Size = new System.Drawing.Size(294, 51);
@@ -77,7 +77,7 @@ namespace BGMOrderAutomation.View
             this.txtItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtItemName.ForeColor = System.Drawing.Color.White;
             this.txtItemName.Location = new System.Drawing.Point(324, 250);
-            this.txtItemName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtItemName.Margin = new System.Windows.Forms.Padding(6);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(294, 51);
             this.txtItemName.TabIndex = 13;
@@ -101,7 +101,7 @@ namespace BGMOrderAutomation.View
             this.txtItemQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtItemQuantity.ForeColor = System.Drawing.Color.White;
             this.txtItemQuantity.Location = new System.Drawing.Point(324, 352);
-            this.txtItemQuantity.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtItemQuantity.Margin = new System.Windows.Forms.Padding(6);
             this.txtItemQuantity.Name = "txtItemQuantity";
             this.txtItemQuantity.Size = new System.Drawing.Size(294, 51);
             this.txtItemQuantity.TabIndex = 15;
@@ -130,25 +130,13 @@ namespace BGMOrderAutomation.View
             this.label4.TabIndex = 16;
             this.label4.Text = "Price";
             // 
-            // txtItemPrice
-            // 
-            this.txtItemPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
-            this.txtItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
-            this.txtItemPrice.ForeColor = System.Drawing.Color.White;
-            this.txtItemPrice.Location = new System.Drawing.Point(324, 629);
-            this.txtItemPrice.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.txtItemPrice.Mask = "00,00";
-            this.txtItemPrice.Name = "txtItemPrice";
-            this.txtItemPrice.Size = new System.Drawing.Size(292, 51);
-            this.txtItemPrice.TabIndex = 48;
-            // 
             // btnViewAllItems
             // 
             this.btnViewAllItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
             this.btnViewAllItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewAllItems.ForeColor = System.Drawing.Color.White;
             this.btnViewAllItems.Location = new System.Drawing.Point(118, 719);
-            this.btnViewAllItems.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnViewAllItems.Margin = new System.Windows.Forms.Padding(6);
             this.btnViewAllItems.Name = "btnViewAllItems";
             this.btnViewAllItems.Size = new System.Drawing.Size(502, 113);
             this.btnViewAllItems.TabIndex = 49;
@@ -166,7 +154,7 @@ namespace BGMOrderAutomation.View
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.Location = new System.Drawing.Point(24, 23);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(6);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(102, 90);
             this.btnBack.TabIndex = 50;
@@ -180,7 +168,7 @@ namespace BGMOrderAutomation.View
             this.txtTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtTax.ForeColor = System.Drawing.Color.White;
             this.txtTax.Location = new System.Drawing.Point(324, 452);
-            this.txtTax.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTax.Margin = new System.Windows.Forms.Padding(6);
             this.txtTax.Name = "txtTax";
             this.txtTax.Size = new System.Drawing.Size(294, 51);
             this.txtTax.TabIndex = 52;
@@ -204,7 +192,7 @@ namespace BGMOrderAutomation.View
             this.txtWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtWeight.ForeColor = System.Drawing.Color.White;
             this.txtWeight.Location = new System.Drawing.Point(324, 540);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(6);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(294, 51);
             this.txtWeight.TabIndex = 54;
@@ -221,19 +209,31 @@ namespace BGMOrderAutomation.View
             this.label6.TabIndex = 53;
             this.label6.Text = "Weight";
             // 
+            // txtItemPrice
+            // 
+            this.txtItemPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
+            this.txtItemPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtItemPrice.ForeColor = System.Drawing.Color.White;
+            this.txtItemPrice.Location = new System.Drawing.Point(324, 638);
+            this.txtItemPrice.Margin = new System.Windows.Forms.Padding(6);
+            this.txtItemPrice.Name = "txtItemPrice";
+            this.txtItemPrice.Size = new System.Drawing.Size(294, 51);
+            this.txtItemPrice.TabIndex = 55;
+            // 
             // CompanyItemEditPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(730, 856);
+            this.Controls.Add(this.txtItemPrice);
             this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTax);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnViewAllItems);
-            this.Controls.Add(this.txtItemPrice);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtItemQuantity);
             this.Controls.Add(this.label3);
@@ -241,7 +241,7 @@ namespace BGMOrderAutomation.View
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtItemID);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "CompanyItemEditPage";
             this.Text = "Update Item";
             this.Load += new System.EventHandler(this.CompanyItemEditPage_Load);
@@ -259,12 +259,12 @@ namespace BGMOrderAutomation.View
         private System.Windows.Forms.TextBox txtItemQuantity;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox txtItemPrice;
         private System.Windows.Forms.Button btnViewAllItems;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox txtTax;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtWeight;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtItemPrice;
     }
 }

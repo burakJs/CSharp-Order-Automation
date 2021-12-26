@@ -21,6 +21,8 @@ namespace BGMOrderAutomation.Models
 
         public void orderComplete(Order order)
         {
+            Models.User user = Models.User.getLoginedUser();
+            user.updateUserTotalShopping(order.calcTotal());
             SqlParameter[] parameters = new SqlParameter[] {
                 new SqlParameter("@order_id",order.orderId),
                 new SqlParameter("@order_state", (int)OrderState.DONE)

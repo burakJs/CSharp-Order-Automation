@@ -32,13 +32,6 @@ namespace BGMOrderAutomation.View
             txtItemID.Text = this.item.id.ToString();
             txtItemName.Text = this.item.name;
             txtItemQuantity.Text = this.item.quantity.ToString();
-            String defaultMask = "00";
-            for(int i = 0; i<this.item.price.ToString().Length - 5; i++)
-            {
-                defaultMask += "0";
-            }
-            defaultMask += ",00";
-            txtItemPrice.Mask = defaultMask;
             txtItemPrice.Text = this.item.price.ToString();
             txtTax.Text = this.item.tax.ToString();
             txtWeight.Text = this.item.weight.ToString();

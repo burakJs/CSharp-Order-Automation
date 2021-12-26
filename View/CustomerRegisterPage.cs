@@ -44,7 +44,6 @@ namespace BGMOrderAutomation.View
             SqlDataReader reader = cmd.ExecuteReader();
             int companyId =reader.Read() ?  (int)reader["id"] : 0; 
             Models.Constant.connect.Close();
-
             customer.companyId = companyId;
             customer.addCustomer();
 
@@ -53,6 +52,7 @@ namespace BGMOrderAutomation.View
                 item.companyId = companyId;
                 item.addItem();
             }
+            customer.loginCustomer();
             this.Hide();
             View.CustomerHomePage customerHomePage = new View.CustomerHomePage();
             customerHomePage.ShowDialog();

@@ -157,11 +157,11 @@ namespace BGMOrderAutomation.Models
     
         public void updateItem()
         {
-            string commandText = "UPDATE Item SET " +
-                "item_name = @item_name AND " +
-                "item_quantity = @item_quantity AND " +
-                "item_price = @item_price AND " +
-                "tax = @tax AND " +
+            string commandText = "UPDATE Items SET " +
+                "item_name = @item_name , " +
+                "item_quantity = @item_quantity , " +
+                "item_price = @item_price , " +
+                "tax = @tax , " +
                 "weight = @weight WHERE id = @id";
 
             SqlParameter[] parameters = new SqlParameter[] {
@@ -169,7 +169,8 @@ namespace BGMOrderAutomation.Models
                 new SqlParameter("@item_quantity",quantity),
                 new SqlParameter("@item_price",price),
                 new SqlParameter("@tax",tax),
-                new SqlParameter("@weight",weight)
+                new SqlParameter("@weight",weight),
+                new SqlParameter("@id", id)
             };
 
             SQLManager.runQuery(parameters, commandText);
